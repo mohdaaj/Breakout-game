@@ -43,6 +43,16 @@ h1 {
   border-radius: 10px;
 }
 
+#ball {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(47, 0, 255);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 40px;        /* just above the paddle */
+  left: 50%;
+  transform: translateX(-50%);
+}
 
 button {
   padding: 12px 20px;
@@ -50,8 +60,15 @@ button {
   cursor: pointer;
   background-color: blueviolet;
   border: 2px solid white;
+  transition: background-color 0.3s ease;
 }
 
+button:hover {
+  background-color: blue;
+}
+button:active {
+  background-color: blue;
+}
 
 main {
   display: flex;
