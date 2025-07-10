@@ -5,6 +5,7 @@ body {
 h1 {
   text-align: center;
   color: blueviolet;
+  border: 4px dashed #24eb88;
   font-family: "Bitcount Grid Double", system-ui;
   font-optical-sizing: auto;
   font-weight: 500;
@@ -15,6 +16,7 @@ h1 {
     "ELSH" 0,
     "ELXP" 0;
   font-size: 3em;
+  border-radius: 10px;
 }
 
 #game-boundary {
@@ -22,8 +24,9 @@ h1 {
   width: 600px;
   height: 600px;
   border: 4px solid blueviolet;
-  background-color: #f0f0f0;
+  background-color: #24eb88;
   position: relative;
+  border-radius: 4px;
 }
 
 .game-layout {
@@ -36,11 +39,18 @@ h1 {
   width: 150px;
   height: 20px;
   background-color: blueviolet;
+  border: 3px solid rgb(0, 0, 0);
   position: absolute;
   bottom: 10px;       /* distance from bottom of game box */
   left: 50%;          /* start from center */
   transform: translateX(-50%); /* perfectly center it */
   border-radius: 10px;
+}
+#paddle:hover {
+  background-color: blue;
+}
+#paddle:active {
+  background-color: blue;
 }
 
 #ball {
@@ -54,6 +64,26 @@ h1 {
   transform: translateX(-50%);
 }
 
+#bricks-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.brick {
+  width: 80px;
+  height: 30px;
+  background-color: rgb(47, 0, 255);
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 4px;
+}
+
+
 button {
   padding: 12px 20px;
   font-size: 16px;
@@ -61,6 +91,7 @@ button {
   background-color: blueviolet;
   border: 2px solid white;
   transition: background-color 0.3s ease;
+  border-radius: 10px;
 }
 
 button:hover {
