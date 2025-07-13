@@ -74,13 +74,18 @@ h1 {
   justify-content: center;
 }
 
+
+
 .brick {
   width: 80px;
   height: 30px;
   background-color: #e91e63;
   border: 2px outset #ffffff;
+  color: black;
+  font-size: 19px;
   border-radius: 4px;
 }
+
 
 
 button {
