@@ -96,12 +96,6 @@ function positionBallAbovePaddle() {
 
 
 
-//
-brick.classList.add("ghost-brick");
-//
-
-
-
 
 function moveBall() {
   x += dx;
@@ -119,6 +113,7 @@ function moveBall() {
     dy = -dy;
   }
 
+  
   // Get the current bricks in DOM at this frame
   const currentBricks = document.querySelectorAll(".brick");
 
@@ -143,7 +138,7 @@ function moveBall() {
     }
   }
 
-  // Paddle bounce
+  // Paddle bounce````
   if (
     y + ball.offsetHeight >= paddle.offsetTop &&
     x + ball.offsetWidth >= paddle.offsetLeft &&
@@ -155,6 +150,7 @@ function moveBall() {
   // Game over
   else if (y + ball.offsetHeight >= gameBoundary.clientHeight) {
     endGame();
+    alert("game end")
   }
 }
 
