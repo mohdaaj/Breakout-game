@@ -1,22 +1,17 @@
 body {
   background-color: #121212;
+    background-image: url("https://sdmntpreastus2.oaiusercontent.com/files/00000000-fcc8-61f6-9cab-fe326071bcd4/raw?se=2025-07-14T13%3A12%3A31Z&sp=r&sv=2024-08-04&sr=b&scid=89525ec2-63ef-50b5-897b-e1d001c625e0&skoid=02b7f7b5-29f8-416a-aeb6-99464748559d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-14T10%3A08%3A16Z&ske=2025-07-15T10%3A08%3A16Z&sks=b&skv=2024-08-04&sig=Fa5pUC8K9wgkUv8QVUwHvqCi/kA/y9ltELC%2BMRmZ2r4%3D");
+    background-size: cover;
 }
 
 h1 {
   text-align: center;
-  color: #ff9800;
-  border: 4px groove #4caf50;
+  color: #ffbb00;
+  /* border: 4px groove #4caf50; */
   font-family: "Bitcount Grid Double", system-ui;
-  font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-  font-variation-settings:
-    "slnt" 0,
-    "CRSV" 0.5,
-    "ELSH" 0,
-    "ELXP" 0;
-  font-size: 3em;
-  border-radius: 10px;
+  font-size: 50px;
 }
 
 #game-boundary {
@@ -28,6 +23,7 @@ h1 {
   position: relative;
   overflow: hidden;
   border-radius: 4px;
+  opacity: 90%;
 }
 
 .game-layout {
@@ -35,6 +31,8 @@ h1 {
   align-items: center;
   justify-content: center;
   gap: 40px;
+
+  
 }
 #paddle {
   width: 150px;
@@ -147,7 +145,7 @@ button:active {
   right: 200px;
   width: 190px;
   height: 100px;
-  font-size: 40px;
+  font-size: 55px;
   text-align: center;
   align-items: center;
   line-height: 100px;
@@ -158,6 +156,7 @@ button:active {
   font-family: "Bitcount Grid Double", system-ui;
   font-weight: 500;
   font-style: italic;
+  opacity: 80%;
 }
 
 
