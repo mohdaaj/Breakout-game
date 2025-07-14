@@ -5,17 +5,22 @@ const resetBtn = document.getElementById("reset");
 const startBtn = document.getElementById("start");
 const bricks = document.querySelectorAll(".brick");
 
+const loseImg = document.querySelector('#Cat Laughing At You')
+const loseSays = new Audio('../assets/sounds/Cat Laughing At You.mp3')
+
 const img = document.createElement("img");  
+
 //////////////////////////////////////////variables////////////////////////////////////////////////
 
 let x = 0;
 let y = 0;
 
-let dx = 4, dy = -4;
+let dx = 5, dy = -5;
 
 let intervalId;
 
 let gameRunning = false;
+let gamereset = true; 
 
 const ballWidth = ball.offsetWidth;
 const ballHeight = ball.offsetHeight;
@@ -52,25 +57,29 @@ gameBoundary.addEventListener("mousemove", function(event) {
 
 document.addEventListener("keydown", function(event) {
   if (event.code === "Space") {
-    if (!gameRunning) {
+    if (!gameRunning && gamereset) {
     positionBallAbovePaddle();
     intervalId = setInterval(moveBall, 10);
     gameRunning = true;
+    gamereset = false;
+
   }
   }
 });
 
 resetBtn.addEventListener("click", () => {
-  location.reload();  
+  location.reload(); 
+  gamereset = true; 
 });
 
 
 startBtn.addEventListener("click", function () {
-    if (!gameRunning && ) {
+    if (!gameRunning && gamereset) {
     positionBallAbovePaddle();
     intervalId = setInterval(moveBall, 10);
     gameRunning = true;
-    location.reload(); 
+    gamereset = false; 
+   
   }
 });
 
@@ -105,24 +114,19 @@ function moveBall() {
   ball.style.left = x + "px";
   ball.style.top = y + "px";
 
-  // Bounce off left and right walls
+  // Bounce off walls
   if (x <= 0 || x + ball.offsetWidth >= gameBoundary.clientWidth) {
     dx = -dx;
   }
 
-  // Bounce off top wall
   if (y <= 0) {
     dy = -dy;
   }
 
-  
-  // Get the current bricks in DOM at this frame
   const currentBricks = document.querySelectorAll(".brick");
 
   for (let i = 0; i < currentBricks.length; i++) {
     const brick = currentBricks[i];
-     
-    const brickRect = brick.getBoundingClientRect();
 
     const brickTop = brick.offsetTop;
     const brickLeft = brick.offsetLeft;
@@ -135,14 +139,21 @@ function moveBall() {
       y + ball.offsetHeight >= brickTop &&
       y <= brickBottom
     ) {
-      dy = -dy;          // Bounce
+      dy = -dy;
+      brick.remove(); // Remove the brick first
 
-     brick.remove()      // Remove the brick hit
-      break;             // Stop checking more bricks this frame
+      // ✅ Check win after removing the brick
+      const remainingBricks = document.querySelectorAll(".brick");
+      if (remainingBricks.length === 0) {
+        endGame();
+        showWinMessage();
+      }
+
+      break;
     }
   }
 
-  // Paddle bounce````
+  // Paddle bounce
   if (
     y + ball.offsetHeight >= paddle.offsetTop &&
     x + ball.offsetWidth >= paddle.offsetLeft &&
@@ -154,16 +165,17 @@ function moveBall() {
   // Game over
   else if (y + ball.offsetHeight >= gameBoundary.clientHeight) {
     endGame();
-    
+    showLoseMessage();
   }
 }
 
 
 
 
+
+
 function endGame() {
   clearInterval(intervalId);
-  showLoseMessage()
   gameRunning = false;
 }
 
@@ -171,7 +183,7 @@ function endGame() {
 
 function showWinMessage() {
   const winMessage = document.createElement("div");
-  winMessage.innerText = "🎉 You Win! 🎉";
+  winMessage.innerText = "🎉You Win!🎉";
   winMessage.style.position = "absolute";
   winMessage.style.top = "50%";
   winMessage.style.left = "50%";
@@ -187,7 +199,7 @@ function showWinMessage() {
 
 function showLoseMessage() {
   const loseMessage = document.createElement("div");
-  
+  loseMessage.innerText = " You lose! ";
   loseMessage.style.position = "absolute";
   loseMessage.style.top = "50%";
   loseMessage.style.left = "50%";
@@ -200,14 +212,16 @@ function showLoseMessage() {
   loseMessage.style.textAlign = "center"; // center the text
   loseMessage.id = "lose-message";
 
-  // ✅ Create and configure image element
+  
   const img = document.createElement("img");
-  img.src = "https://imgur.com/8Isp5Aq";
+  img.src = "https://cdn3.emoji.gg/emojis/8413-cat-point-and-laugh.png";
   img.style.width = "300px";
   img.style.borderRadius = "12px";
   img.style.marginTop = "20px";
-
-  // ✅ Append message and image
+  
+  loseSays.volume = .05
+  loseSays.play()
+  
   gameBoundary.appendChild(loseMessage);
   loseMessage.appendChild(img);
 }
