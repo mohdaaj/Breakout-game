@@ -119,6 +119,8 @@ function moveBall() {
 
   for (let i = 0; i < currentBricks.length; i++) {
     const brick = currentBricks[i];
+     
+    const brickRect = brick.getBoundingClientRect();
 
     const brickTop = brick.offsetTop;
     const brickLeft = brick.offsetLeft;
@@ -132,8 +134,8 @@ function moveBall() {
       y <= brickBottom
     ) {
       dy = -dy;          // Bounce
-      brick.style.backgroundColor = "#1e1e2f";
-      brick.style.border =  "#1e1e2f";  // Remove the brick hit
+
+     brick.remove()      // Remove the brick hit
       break;             // Stop checking more bricks this frame
     }
   }
