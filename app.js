@@ -3,10 +3,13 @@ const paddle = document.getElementById("paddle");
 const ball = document.getElementById("ball");
 const resetBtn = document.getElementById("reset");
 const startBtn = document.getElementById("start");
-const bricks = document.querySelectorAll(".brick");
+const bricks = document.querySelectorAll(".brick, .brickG, .brickB, .brickP");
+
 
 const loseImg = document.querySelector('#Cat Laughing At You')
 const loseSays = new Audio('../assets/sounds/Cat Laughing At You.mp3')
+
+const popSays = new Audio('../assets/sounds/Pop sound effect.mp3')
 
 const img = document.createElement("img");  
 
@@ -15,7 +18,7 @@ const img = document.createElement("img");
 let x = 0;
 let y = 0;
 
-let dx = 5, dy = -5;
+let dx =5 , dy = -5;
 
 let intervalId;
 
@@ -56,7 +59,7 @@ gameBoundary.addEventListener("mousemove", function(event) {
 
 
 document.addEventListener("keydown", function(event) {
-  if (event.code === "Space") {
+  if (event.code === "Space" ) {
     if (!gameRunning && gamereset) {
     positionBallAbovePaddle();
     intervalId = setInterval(moveBall, 10);
@@ -64,6 +67,15 @@ document.addEventListener("keydown", function(event) {
     gamereset = false;
 
   }
+  }
+});
+
+document.addEventListener("mousedown", function(event) {
+  if (event.button === 0 && !gameRunning && gamereset) {
+    positionBallAbovePaddle();
+    intervalId = setInterval(moveBall, 10);
+    gameRunning = true;
+    gamereset = false;
   }
 });
 
@@ -123,7 +135,8 @@ function moveBall() {
     dy = -dy;
   }
 
-  const currentBricks = document.querySelectorAll(".brick");
+  // Select all bricks, including colored ones
+  const currentBricks = document.querySelectorAll(".brick, .brickG, .brickB, .brickP, .brickY, .brickC, .brickW");
 
   for (let i = 0; i < currentBricks.length; i++) {
     const brick = currentBricks[i];
@@ -139,11 +152,38 @@ function moveBall() {
       y + ball.offsetHeight >= brickTop &&
       y <= brickBottom
     ) {
-      dy = -dy;
-      brick.remove(); // Remove the brick first
+      // Determine bounce direction
+      const overlapLeft = (x + ball.offsetWidth) - brickLeft;
+      const overlapRight = brickRight - x;
+      const overlapTop = (y + ball.offsetHeight) - brickTop;
+      const overlapBottom = brickBottom - y;
 
-      // ✅ Check win after removing the brick
-      const remainingBricks = document.querySelectorAll(".brick");
+      const minOverlapX = Math.min(overlapLeft, overlapRight);
+      const minOverlapY = Math.min(overlapTop, overlapBottom);
+
+      if (minOverlapX < minOverlapY) {
+        dx = -dx; // Horizontal bounce
+      } else {
+        dy = -dy; // Vertical bounce
+      }
+
+      // Scoring based on brick type
+      let points = 100; // Default
+      if (brick.classList.contains("brickG")) points = 150;
+      else if (brick.classList.contains("brickB")) points = 200;
+      else if (brick.classList.contains("brickP")) points = 250;
+
+      brick.remove();
+      popSays.volume = 0.05;
+      popSays.play();
+
+      // Update score
+      const scoreboard = document.querySelector(".scoreboard");
+      const currentScore = parseInt(scoreboard.textContent);
+      scoreboard.textContent = currentScore + points;
+
+      // Check win condition
+      const remainingBricks = document.querySelectorAll(".brick, .brickG, .brickB, .brickP");
       if (remainingBricks.length === 0) {
         endGame();
         showWinMessage();
@@ -168,6 +208,7 @@ function moveBall() {
     showLoseMessage();
   }
 }
+
 
 
 

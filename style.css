@@ -81,11 +81,34 @@ h1 {
   position: absolute;
   width: 80px;
   height: 30px;
-  background-color: #e91e63;
+  background-color: #f31111;
   border: 2px outset #ffffff;
   border-radius: 4px;
 }
-
+.brickG {
+  position: absolute;
+  width: 80px;
+  height: 30px;
+  background-color: #2b8b0d;
+  border: 2px outset #ffffff;
+  border-radius: 4px;
+}
+.brickB {
+  position: absolute;
+  width: 80px;
+  height: 30px;
+  background-color: #2719ee;
+  border: 2px outset #ffffff;
+  border-radius: 4px;
+}
+.brickP {
+  position: absolute;
+  width: 80px;
+  height: 30px;
+  background-color: #ee19d2;
+  border: 2px outset #ffffff;
+  border-radius: 4px;
+}
 
 
 button {
@@ -104,6 +127,39 @@ button:hover {
 button:active {
   background-color: #66bb6a;
 }
+
+.score {
+  position: absolute;
+  top: 70px;
+  right: 260px;
+  width: 100px;
+  height: 50px;
+  font-size: 45px;
+  font-weight: bold;
+  color: blue;
+  font-family: "Bitcount Grid Double", system-ui;
+  font-style: italic;
+}
+
+.scoreboard {
+  position: absolute;
+  top: 170px;
+  right: 200px;
+  width: 190px;
+  height: 100px;
+  font-size: 40px;
+  text-align: center;
+  align-items: center;
+  line-height: 100px;
+  background-color: #ee19d2;
+  border: 2px outset #ffffff;
+  border-radius: 4px;
+  color: blue;
+  font-family: "Bitcount Grid Double", system-ui;
+  font-weight: 500;
+  font-style: italic;
+}
+
 
 main {
   display: flex;
