@@ -5,12 +5,13 @@ const resetBtn = document.getElementById("reset");
 const startBtn = document.getElementById("start");
 const bricks = document.querySelectorAll(".brick");
 
+const img = document.createElement("img");  
 //////////////////////////////////////////variables////////////////////////////////////////////////
 
 let x = 0;
 let y = 0;
 
-let dx = 2, dy = -2;
+let dx = 4, dy = -4;
 
 let intervalId;
 
@@ -65,10 +66,11 @@ resetBtn.addEventListener("click", () => {
 
 
 startBtn.addEventListener("click", function () {
-    if (!gameRunning) {
+    if (!gameRunning && ) {
     positionBallAbovePaddle();
     intervalId = setInterval(moveBall, 10);
     gameRunning = true;
+    location.reload(); 
   }
 });
 
@@ -152,7 +154,7 @@ function moveBall() {
   // Game over
   else if (y + ball.offsetHeight >= gameBoundary.clientHeight) {
     endGame();
-    alert("game end")
+    
   }
 }
 
@@ -161,11 +163,54 @@ function moveBall() {
 
 function endGame() {
   clearInterval(intervalId);
-  
+  showLoseMessage()
   gameRunning = false;
 }
 
 
+
+function showWinMessage() {
+  const winMessage = document.createElement("div");
+  winMessage.innerText = "🎉 You Win! 🎉";
+  winMessage.style.position = "absolute";
+  winMessage.style.top = "50%";
+  winMessage.style.left = "50%";
+  winMessage.style.transform = "translate(-50%, -50%)";
+  winMessage.style.fontSize = "36px";
+  winMessage.style.fontWeight = "bold";
+  winMessage.style.color = "#24eb88";
+  winMessage.style.textShadow = "2px 2px #000";
+  winMessage.style.zIndex = "1000";
+  winMessage.id = "win-message";
+  gameBoundary.appendChild(winMessage);
+}
+
+function showLoseMessage() {
+  const loseMessage = document.createElement("div");
+  
+  loseMessage.style.position = "absolute";
+  loseMessage.style.top = "50%";
+  loseMessage.style.left = "50%";
+  loseMessage.style.transform = "translate(-50%, -50%)";
+  loseMessage.style.fontSize = "36px";
+  loseMessage.style.fontWeight = "bold";
+  loseMessage.style.color = "#24eb88";
+  loseMessage.style.textShadow = "2px 2px #000";
+  loseMessage.style.zIndex = "1000";
+  loseMessage.style.textAlign = "center"; // center the text
+  loseMessage.id = "lose-message";
+
+  // ✅ Create and configure image element
+  const img = document.createElement("img");
+  img.src = "https://imgur.com/8Isp5Aq";
+  img.style.width = "300px";
+  img.style.borderRadius = "12px";
+  img.style.marginTop = "20px";
+
+  // ✅ Append message and image
+  gameBoundary.appendChild(loseMessage);
+  loseMessage.appendChild(img);
+}
 
 
 
