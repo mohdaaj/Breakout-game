@@ -107,6 +107,15 @@ h1 {
   border: 2px outset #ffffff;
   border-radius: 4px;
 }
+.brickGold {
+  position: absolute;
+  width: 80px;
+  height: 30px;
+  background-color: #ffa600;
+  border: 2px outset #ffffff;
+  border-radius: 4px;
+}
+
 
 
 button {

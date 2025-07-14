@@ -3,7 +3,7 @@ const paddle = document.getElementById("paddle");
 const ball = document.getElementById("ball");
 const resetBtn = document.getElementById("reset");
 const startBtn = document.getElementById("start");
-const bricks = document.querySelectorAll(".brick, .brickG, .brickB, .brickP");
+const bricks = document.querySelectorAll(".brick, .brickG, .brickB, .brickP, brickGold");
 
 
 const loseImg = document.querySelector('#Cat Laughing At You')
@@ -136,7 +136,7 @@ function moveBall() {
   }
 
   // Select all bricks, including colored ones
-  const currentBricks = document.querySelectorAll(".brick, .brickG, .brickB, .brickP, .brickY, .brickC, .brickW");
+  const currentBricks = document.querySelectorAll(".brick, .brickG, .brickB, .brickP, .brickGold");
 
   for (let i = 0; i < currentBricks.length; i++) {
     const brick = currentBricks[i];
@@ -172,6 +172,7 @@ function moveBall() {
       if (brick.classList.contains("brickG")) points = 150;
       else if (brick.classList.contains("brickB")) points = 200;
       else if (brick.classList.contains("brickP")) points = 250;
+      else if (brick.classList.contains("brickGold")) points = 400;
 
       brick.remove();
       popSays.volume = 0.05;
@@ -183,7 +184,7 @@ function moveBall() {
       scoreboard.textContent = currentScore + points;
 
       // Check win condition
-      const remainingBricks = document.querySelectorAll(".brick, .brickG, .brickB, .brickP");
+      const remainingBricks = document.querySelectorAll(".brick, .brickG, .brickB, .brickP, brickGold");
       if (remainingBricks.length === 0) {
         endGame();
         showWinMessage();
