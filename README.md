@@ -6,11 +6,10 @@ Breakout is a classic arcade-style game where the player controls a paddle at th
 ## How to Get Started
 1. Clone the repository (once approved)
 2. Open `index.html` in your browser
-3. Use arrow keys to move the paddle
-4. Try to break all the bricks without letting the ball fall!
+3. Try to break all the bricks without letting the ball fall!
 
 ## How to Play
-- Use ← and → arrow keys to move the paddle or using the mouse.
+- Use mouse to move the paddle left and right.
 - Keep the ball from falling off the screen.
 - Destroy all bricks to win the game.
 
