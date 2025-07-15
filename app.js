@@ -2,7 +2,6 @@ const gameBoundary = document.getElementById("game-boundary");
 const paddle = document.getElementById("paddle");
 const ball = document.getElementById("ball");
 const resetBtn = document.getElementById("reset");
-const startBtn = document.getElementById("start");
 
 const difficulties = document.querySelectorAll("Easy, Medium, Hard");
 
@@ -89,17 +88,17 @@ resetBtn.addEventListener("click", () => {
 });
 
 
-startBtn.addEventListener("click", function () {
+// startBtn.addEventListener("click", function () {
   
-    if (!gameRunning && gamereset) {
-    positionBallAbovePaddle();
-    intervalId = setInterval(moveBall, 10);
-    gameRunning = true;
-    gamereset = false; 
-    gameBoundary.style.color = "#1e1e2f";
+//     if (!gameRunning && gamereset) {
+//     positionBallAbovePaddle();
+//     intervalId = setInterval(moveBall, 10);
+//     gameRunning = true;
+//     gamereset = false; 
+//     gameBoundary.style.color = "#1e1e2f";
 
-  }
-});
+//   }
+// });
 
 
 

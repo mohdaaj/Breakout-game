@@ -1,17 +1,19 @@
 body {
+  display: grid;
   background-color: #121212;
-    background-image: url("../assets/images/8232ba2c-896e-4d08-9288-b91cc4e4de29.png");
-    background-size: cover;
+  background-image: url("../assets/images/8232ba2c-896e-4d08-9288-b91cc4e4de29.png");
+  background-size: cover;
+  justify-content: center;
 }
 
 h1 {
   text-align: center;
   color: #ffbb00;
-  /* border: 4px groove #4caf50; */
   font-family: "Bitcount Grid Double", system-ui;
   font-weight: 500;
   font-style: normal;
   font-size: 50px;
+  margin: 0;
 }
 
 #game-boundary {
@@ -21,37 +23,49 @@ h1 {
   flex-direction: row;
   justify-content: center;
   font-size: 50px;
-
   width: 600px;
   height: 600px;
   border: 5px inset #ff9800;
   background-color: #1e1e2f;
   position: relative;
-  
   border-radius: 4px;
   opacity: 90%;
 }
 
 .game-layout {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 200px 600px 200px;
   gap: 40px;
-
-  
+  align-items: start;
+  justify-content: center;
 }
+
+.left-panel {
+  grid-column: 1;
+}
+
+#game-boundary {
+  grid-column: 2;
+}
+
+.right-panel {
+  grid-column: 3;
+}
+
 #paddle {
   width: 150px;
   height: 20px;
   background-color: #ff9800;
   border: 3px outset #ffffff;
   position: absolute;
-  bottom: 10px;       /* distance from bottom of game box */
+  bottom: 10px;
   border-radius: 10px;
 }
+
 #paddle:hover {
   background-color: #ffc107;
 }
+
 #paddle:active {
   background-color: #ffc107;
 }
@@ -62,7 +76,7 @@ h1 {
   background-color: #03a9f4;
   border-radius: 50%;
   position: absolute;
-  bottom: 40px;        /* just above the paddle */
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
   border: 2px outset #ffffff;
@@ -79,69 +93,39 @@ h1 {
   justify-content: center;
 }
 
-
-
-.brick {
-  position: absolute;
-  width: 80px;
-  height: 30px;
-  background-color: #f31111;
-  border: 2px outset #ffffff;
-  border-radius: 4px;
-}
-.brickG {
-  position: absolute;
-  width: 80px;
-  height: 30px;
-  background-color: #2b8b0d;
-  border: 2px outset #ffffff;
-  border-radius: 4px;
-}
-.brickB {
-  position: absolute;
-  width: 80px;
-  height: 30px;
-  background-color: #2719ee;
-  border: 2px outset #ffffff;
-  border-radius: 4px;
-}
-.brickP {
-  position: absolute;
-  width: 80px;
-  height: 30px;
-  background-color: #ee19d2;
-  border: 2px outset #ffffff;
-  border-radius: 4px;
-}
+.brick,
+.brickG,
+.brickB,
+.brickP,
 .brickGold {
   position: absolute;
   width: 80px;
   height: 30px;
-  background-color: #ffa600;
   border: 2px outset #ffffff;
   border-radius: 4px;
 }
 
-
-#start {
-  padding: 12px 20px;
-  font-size: 20px;
-  cursor: pointer;
-  background-color: #4caf50;
-  border: 2px solid white;
-  transition: background-color 0.3s ease;
-  border-radius: 10px;
-  font-style: italic;
-  color: wheat;
-  font-family: "Bitcount Grid Double", system-ui;
+.brick {
+  background-color: #f31111;
 }
 
-#start:hover {
-  background-color: #115215;
+.brickG {
+  background-color: #2b8b0d;
 }
-#start:active {
-  background-color: #66bb6a;
+
+.brickB {
+  background-color: #2719ee;
 }
+
+.brickP {
+  background-color: #ee19d2;
+}
+
+.brickGold {
+  background-color: #ffa600;
+}
+
+#start,
 #reset {
   padding: 12px 20px;
   font-size: 20px;
@@ -153,37 +137,38 @@ h1 {
   font-style: italic;
   color: wheat;
   font-family: "Bitcount Grid Double", system-ui;
+  margin: 10px;
 }
 
+#start:hover,
 #reset:hover {
   background-color: #115215;
 }
+
+#start:active,
 #reset:active {
   background-color: #66bb6a;
 }
 
 .score {
-  position: absolute;
-  top: 70px;
-  right: 260px;
-  width: 100px;
-  height: 50px;
   font-size: 45px;
   font-weight: bold;
   color: blue;
   font-family: "Bitcount Grid Double", system-ui;
   font-style: italic;
+  margin: 0;
+  
 }
 
 .scoreboard {
-  position: absolute;
-  top: 170px;
-  right: 200px;
+  grid-column: 3/4;
+  /* top: 170px;
+  right: 200px; */
   width: 190px;
   height: 100px;
-  font-size: 55px;
+   font-size: 55px; 
   text-align: center;
-  align-items: center;
+  align-items: center; 
   line-height: 100px;
   background-color: #ee19d2;
   border: 2px outset #ffffff;
@@ -196,29 +181,20 @@ h1 {
 }
 
 .difficulties {
-  position: absolute;
-  top: 175px; 
-  right: 1020px; 
-  left: 30px;
-  bottom: 250px;
+  grid-column: 2 /3;
+
 }
 
 .difficulty {
-  position: absolute;
-  top: 75px; /* place it near the top */
-  right: 1020px; /* distance from right edge */
-  left: 30px;
-  width: 50px;
-  padding: 10px 30px;
+  grid-column: 2/3;
+  padding: 10px -50px;
   font-size: 40px;
-  line-height: 60px;
-  text-align: center;
-  align-items: center;
   color: blue;
   font-family: "Bitcount Grid Double", system-ui;
   font-weight: bold;
   font-style: italic;
   opacity: 0.8;
+  margin: 0;
 }
 
 .difficulties ul {
@@ -228,67 +204,54 @@ h1 {
   border-radius: 4px;
   padding: 0;
   margin: 0;
-  text-align: center;
   display: flex;
-  text-align: center;
   flex-direction: column;
+  text-align: center;
 }
 
-.difficulties button.Easy{
-  font-family: "Bitcount Grid Double", system-ui;
+.difficulties button.Easy {
   background-color: #5cee19;
-  border: 5 px outset #000000;
+  border: outset #000000;
   font-size: 35px;
   color: wheat;
   font-family: "Bitcount Grid Double", system-ui;
   font-style: italic;
-  
 }
 
-button.Easy:hover {
-  background-color: #115215;
-}
+button.Easy:hover,
 button.Easy:active {
   background-color: #115215;
 }
 
-.difficulties button.Medium{
-  list-style: none;
+.difficulties button.Medium {
   background-color: #1940ee;
-  border: 5 px outset #000000;
+  border: outset #000000;
   font-size: 35px;
   color: wheat;
   font-family: "Bitcount Grid Double", system-ui;
   font-style: italic;
-  
 }
 
-button.Medium:hover {
-  background-color: #0e0746;
-}
+button.Medium:hover,
 button.Medium:active {
   background-color: #0e0746;
 }
 
-.difficulties button.Hard{
+.difficulties button.Hard {
   background-color: #ff0202;
-  border: 5px;
+  border: outset #000000;
   font-size: 35px;
   color: wheat;
   font-family: "Bitcount Grid Double", system-ui;
   font-style: italic;
 }
 
-button.Hard:hover {
-  background-color: #680c0c;
-}
+button.Hard:hover,
 button.Hard:active {
   background-color: #680c0c;
 }
 
 main {
   display: flex;
-  justify-content: center; /* Center the entire game layout horizontally */
+  justify-content: center;
 }
-
-

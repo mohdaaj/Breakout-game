@@ -1,72 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="./app.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap" rel="stylesheet">
-    <title>Breakout-game</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script defer src="./app.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap" rel="stylesheet" />
+  <title>Breakout-game</title>
 </head>
 <body>
-    <h1>Breakout .</h1>
-    <main>
-  <div class="game-layout">
-  <button id="start">Start</button>
-  <p class="difficulty">Difficulty</p>
-  <div class="difficulties">
-    <ul>
-      <button class="Easy">Easy</button>
-      <button class="Medium">Medium</button>
-      <button class="Hard">Hard</button>
-    </ul>
+  <div class="top-panel">
+    <h1>Breakout </h1>
   </div>
-  <div id="game-boundary" >Press SPACE to start          
-  <div id="bricks-container">
- 
-<!-- Row 1 -->
-<div class="brickGold" style="top: 20px; left: 20px;"></div>
-<div class="brickG" style="top: 20px; left: 110px;"></div>
-<div class="brickP" style="top: 20px; left: 200px;"></div>
-<div class="brick" style="top: 20px; left: 290px;"></div>
-<div class="brickB" style="top: 20px; left: 380px;"></div>
-<div class="brick" style="top: 20px; left: 470px;"></div>
+  <main>
+    <div class="middle-panel">
+      <div class="game-layout">
+      
+        <div class="left-panel">
+          <p class="difficulty">Difficulty</p>
+          <div class="difficulties">
+            <ul>
+              <button class="Easy">Easy</button>
+              <button class="Medium">Medium</button>
+              <button class="Hard">Hard</button>
+            </ul>
+          </div>
+        </div>
+        <div id="game-boundary">Press SPACE to start
+          
 
-<!-- Row 2 -->
-<div class="brick" style="top: 60px; left: 20px;"></div>
-<div class="brickP" style="top: 60px; left: 110px;"></div>
-<div class="brick" style="top: 60px; left: 200px;"></div>
-<div class="brickB" style="top: 60px; left: 290px;"></div>
-<div class="brick" style="top: 60px; left: 380px;"></div>
-<div class="brickG" style="top: 60px; left: 470px;"></div>
+            <div id="bricks-container"></div>
 
-<!-- Row 3 -->
-<div class="brickB" style="top: 100px; left: 20px;"></div>
-<div class="brick" style="top: 100px; left: 110px;"></div>
-<div class="brick" style="top: 100px; left: 200px;"></div>
-<div class="brickG" style="top: 100px; left: 290px;"></div>
-<div class="brick" style="top: 100px; left: 380px;"></div>
-<div class="brickP" style="top: 100px; left: 470px;"></div>
+            <!-- Row 1 -->
+            <div class="brickGold" style="top: 20px; left: 20px;"></div>
+            <div class="brickG" style="top: 20px; left: 110px;"></div>
+            <div class="brickP" style="top: 20px; left: 200px;"></div>
+            <div class="brick" style="top: 20px; left: 290px;"></div>
+            <div class="brickB" style="top: 20px; left: 380px;"></div>
+            <div class="brick" style="top: 20px; left: 470px;"></div>
 
+            <!-- Row 2 -->
+            <div class="brick" style="top: 60px; left: 20px;"></div>
+            <div class="brickP" style="top: 60px; left: 110px;"></div>
+            <div class="brick" style="top: 60px; left: 200px;"></div>
+            <div class="brickB" style="top: 60px; left: 290px;"></div>
+            <div class="brick" style="top: 60px; left: 380px;"></div>
+            <div class="brickG" style="top: 60px; left: 470px;"></div>
 
-    
-  </div>
- 
- <div id="paddle"></div>
- <div id="ball"></div>
+            <!-- Row 3 -->
+            <div class="brickB" style="top: 100px; left: 20px;"></div>
+            <div class="brick" style="top: 100px; left: 110px;"></div>
+            <div class="brick" style="top: 100px; left: 200px;"></div>
+            <div class="brickG" style="top: 100px; left: 290px;"></div>
+            <div class="brick" style="top: 100px; left: 380px;"></div>
+            <div class="brickP" style="top: 100px; left: 470px;"></div>
 
-   
-  </div>
-  <button id="reset">Restart Game</button>
-  
-  <p class="score">Score</p>
-     <div class="scoreboard">0</div>
-  
-</div> 
-
-
-</main>
+            <div id="paddle"></div>
+            <div id="ball"></div>
+            
+          </div>
+                    <div class="right-panel">
+                    <p class="score">Score</p>
+                    <div class="scoreboard">0</div>
+                    <button id="reset">Restart Game</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
