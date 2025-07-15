@@ -1,6 +1,6 @@
 body {
   background-color: #121212;
-    background-image: url("https://sdmntpreastus2.oaiusercontent.com/files/00000000-fcc8-61f6-9cab-fe326071bcd4/raw?se=2025-07-14T13%3A12%3A31Z&sp=r&sv=2024-08-04&sr=b&scid=89525ec2-63ef-50b5-897b-e1d001c625e0&skoid=02b7f7b5-29f8-416a-aeb6-99464748559d&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-14T10%3A08%3A16Z&ske=2025-07-15T10%3A08%3A16Z&sks=b&skv=2024-08-04&sig=Fa5pUC8K9wgkUv8QVUwHvqCi/kA/y9ltELC%2BMRmZ2r4%3D");
+    background-image: url("../assets/images/8232ba2c-896e-4d08-9288-b91cc4e4de29.png");
     background-size: cover;
 }
 
@@ -168,6 +168,71 @@ button:active {
   opacity: 80%;
 }
 
+.difficulties {
+  position: absolute;
+  top: 175px; 
+  right: 1020px; 
+  left: 30px;
+  bottom: 250px;
+  background-color: #ee19d2;
+  border: 2px outset #ffffff;
+  border-radius: 6px;
+  font-size: 30px;
+  color: blue;
+  font-family: "Bitcount Grid Double", system-ui;
+  font-style: italic;
+}
+.difficulty {
+  position: absolute;
+  top: 75px; /* place it near the top */
+  right: 1020px; /* distance from right edge */
+  left: 30px;
+  width: 50px;
+  padding: 10px 30px;
+  font-size: 40px;
+  line-height: 60px;
+  text-align: center;
+  align-items: center;
+  color: blue;
+  font-family: "Bitcount Grid Double", system-ui;
+  font-weight: bold;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.difficulties ul {
+  border: #03a9f4;
+  background-color: #c8c9d1;
+  border: 7px outset #ffffff;
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  color: wheat;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  font-size: 60px;
+}
+.difficulties li.Easy{
+  list-style: none;
+
+  background-color: #5cee19;
+  border: 5 px outset #000000;
+  border-radius: 0px;
+  
+}
+.difficulties li.Medium{
+  list-style: none;
+  background-color: #1940ee;
+  border: 5 px outset #000000;
+  border-radius: 0px;
+  
+}.difficulties li.Hard{
+  background-color: #ff0202;
+  border: 5px;
+  border-radius: 0px;
+}
 
 main {
   display: flex;
