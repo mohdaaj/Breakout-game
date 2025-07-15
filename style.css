@@ -15,13 +15,19 @@ h1 {
 }
 
 #game-boundary {
+  display: flex;
+  color: #681717;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 50px;
 
   width: 600px;
   height: 600px;
   border: 5px inset #ff9800;
   background-color: #1e1e2f;
   position: relative;
-  overflow: hidden;
+  
   border-radius: 4px;
   opacity: 90%;
 }
@@ -117,21 +123,42 @@ h1 {
 }
 
 
-
-button {
+#start {
   padding: 12px 20px;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
   background-color: #4caf50;
   border: 2px solid white;
   transition: background-color 0.3s ease;
   border-radius: 10px;
+  font-style: italic;
+  color: wheat;
+  font-family: "Bitcount Grid Double", system-ui;
 }
 
-button:hover {
+#start:hover {
+  background-color: #115215;
+}
+#start:active {
   background-color: #66bb6a;
 }
-button:active {
+#reset {
+  padding: 12px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #4caf50;
+  border: 2px solid white;
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
+  font-style: italic;
+  color: wheat;
+  font-family: "Bitcount Grid Double", system-ui;
+}
+
+#reset:hover {
+  background-color: #115215;
+}
+#reset:active {
   background-color: #66bb6a;
 }
 
@@ -174,14 +201,8 @@ button:active {
   right: 1020px; 
   left: 30px;
   bottom: 250px;
-  background-color: #ee19d2;
-  border: 2px outset #ffffff;
-  border-radius: 6px;
-  font-size: 30px;
-  color: blue;
-  font-family: "Bitcount Grid Double", system-ui;
-  font-style: italic;
 }
+
 .difficulty {
   position: absolute;
   top: 75px; /* place it near the top */
@@ -203,38 +224,71 @@ button:active {
 .difficulties ul {
   border: #03a9f4;
   background-color: #c8c9d1;
-  border: 7px outset #ffffff;
+  border: 5px outset #ffffff;
   border-radius: 4px;
   padding: 0;
   margin: 0;
   text-align: center;
-  color: wheat;
   display: flex;
   text-align: center;
   flex-direction: column;
-  font-size: 60px;
 }
-.difficulties li.Easy{
-  list-style: none;
 
+.difficulties button.Easy{
+  font-family: "Bitcount Grid Double", system-ui;
   background-color: #5cee19;
   border: 5 px outset #000000;
-  border-radius: 0px;
+  font-size: 35px;
+  color: wheat;
+  font-family: "Bitcount Grid Double", system-ui;
+  font-style: italic;
   
 }
-.difficulties li.Medium{
+
+button.Easy:hover {
+  background-color: #115215;
+}
+button.Easy:active {
+  background-color: #115215;
+}
+
+.difficulties button.Medium{
   list-style: none;
   background-color: #1940ee;
   border: 5 px outset #000000;
-  border-radius: 0px;
+  font-size: 35px;
+  color: wheat;
+  font-family: "Bitcount Grid Double", system-ui;
+  font-style: italic;
   
-}.difficulties li.Hard{
+}
+
+button.Medium:hover {
+  background-color: #0e0746;
+}
+button.Medium:active {
+  background-color: #0e0746;
+}
+
+.difficulties button.Hard{
   background-color: #ff0202;
   border: 5px;
-  border-radius: 0px;
+  font-size: 35px;
+  color: wheat;
+  font-family: "Bitcount Grid Double", system-ui;
+  font-style: italic;
+}
+
+button.Hard:hover {
+  background-color: #680c0c;
+}
+button.Hard:active {
+  background-color: #680c0c;
 }
 
 main {
   display: flex;
   justify-content: center; /* Center the entire game layout horizontally */
 }
+
+

@@ -3,6 +3,9 @@ const paddle = document.getElementById("paddle");
 const ball = document.getElementById("ball");
 const resetBtn = document.getElementById("reset");
 const startBtn = document.getElementById("start");
+
+const difficulties = document.querySelectorAll("Easy, Medium, Hard");
+
 const bricks = document.querySelectorAll(".brick, .brickG, .brickB, .brickP, brickGold");
 
 
@@ -65,19 +68,20 @@ document.addEventListener("keydown", function(event) {
     intervalId = setInterval(moveBall, 10);
     gameRunning = true;
     gamereset = false;
+    gameBoundary.style.color = "#1e1e2f";
 
   }
   }
 });
 
-document.addEventListener("mousedown", function(event) {
-  if (event.button === 0 && !gameRunning && gamereset) {
-    positionBallAbovePaddle();
-    intervalId = setInterval(moveBall, 10);
-    gameRunning = true;
-    gamereset = false;
-  }
-});
+// document.addEventListener("mousedown", function(event) {
+//   if (event.button === 0 && !gameRunning && gamereset) {
+//     positionBallAbovePaddle();
+//     intervalId = setInterval(moveBall, 10);
+//     gameRunning = true;
+//     gamereset = false;
+//   }
+// });
 
 resetBtn.addEventListener("click", () => {
   location.reload(); 
@@ -86,14 +90,18 @@ resetBtn.addEventListener("click", () => {
 
 
 startBtn.addEventListener("click", function () {
+  
     if (!gameRunning && gamereset) {
     positionBallAbovePaddle();
     intervalId = setInterval(moveBall, 10);
     gameRunning = true;
     gamereset = false; 
-   
+    gameBoundary.style.color = "#1e1e2f";
+
   }
 });
+
+
 
 ///////////////////////////////////////////functions///////////////////////////////////////////////
 
@@ -270,8 +278,7 @@ function showLoseMessage() {
 
 
 
-//////////////////////////////////////////////////////////////////////////////////////////
-
+/////////////////////////////////////////difficulty/////////////////////////////////////////////////
 
 
 
