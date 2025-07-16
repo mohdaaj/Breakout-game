@@ -32,4 +32,4 @@ Inspired by the classic Atari Breakout game and Mozilla Developer Network (MDN) 
 
 ## Game page
  Press this to take you directly to the game page
- * **[Breakout](1752652002165-parsimonious-pizzas.surge.sh)**
+ * **[Breakout](https://Breakout-score.surge.sh)**
