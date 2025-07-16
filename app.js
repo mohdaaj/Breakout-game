@@ -215,10 +215,12 @@ function showWinMessage() {
   winMessage.style.position = "absolute";
   winMessage.style.top = "50%";
   winMessage.style.left = "50%";
+  winMessage.style.transform = "translate(-50%, -50%)";
   winMessage.style.fontSize = "36px";
   winMessage.style.fontWeight = "bold";
   winMessage.style.color = "#24eb88";
   winMessage.style.textShadow = "2px 2px #000";
+  winMessage.style.zIndex = "1000";
   winMessage.id = "win-message";
   gameBoundary.appendChild(winMessage);
 }
@@ -229,11 +231,13 @@ function showLoseMessage() {
   loseMessage.style.position = "absolute";
   loseMessage.style.top = "50%";
   loseMessage.style.left = "50%";
+  loseMessage.style.transform = "translate(-50%, -50%)";
   loseMessage.style.fontSize = "36px";
   loseMessage.style.fontWeight = "bold";
   loseMessage.style.color = "#24eb88";
   loseMessage.style.textShadow = "2px 2px #000";
-  loseMessage.style.textAlign = "center"; // center the text
+  loseMessage.style.zIndex = "1000";
+  loseMessage.style.textAlign = "center"; 
   loseMessage.id = "lose-message";
 
   
@@ -253,5 +257,6 @@ function showLoseMessage() {
 
 
 /////////////////////////////////////////difficulty/////////////////////////////////////////////////
+
 
 
