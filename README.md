@@ -18,12 +18,9 @@ Breakout is a classic arcade-style game where the player controls a paddle at th
 - CSS.
 
 ## Additionals
+![image](/assets/images/wireframe.PNG)
+
 - [My Trello](https://trello.com/invite/b/686f1bf3b4ba30e9d1ace2d3/ATTI09bf4b0671472700b7d9f3038ba82ba2A1DC1336/my-trello-board)
-
-- [My Wireframe](https://wireframe.cc/pro/pp/47b5c5d27963304)
- ![](../assets/images/wireframe.PNG)
-
-
 
 - [My Pseudocode](https://docs.google.com/document/d/1vMOxECBFz5QpF5lYBSDcB8IEV6HAghOf1tPFkAsZsGg/edit?usp=sharing)
 
