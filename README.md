@@ -24,6 +24,7 @@ Breakout is a classic arcade-style game where the player controls a paddle at th
  ![](../assets/images/wireframe pic)
 
 
+
 - [My Pseudocode](https://docs.google.com/document/d/1vMOxECBFz5QpF5lYBSDcB8IEV6HAghOf1tPFkAsZsGg/edit?usp=sharing)
 
 ## Credits
