@@ -42,6 +42,7 @@ h1 {
 
 .left-panel {
   grid-column: 1;
+  text-align: center;
 }
 
 #game-boundary {
@@ -50,6 +51,7 @@ h1 {
 
 .right-panel {
   grid-column: 3;
+  text-align: center;
 }
 
 #paddle {
@@ -170,6 +172,7 @@ h1 {
   text-align: center;
   align-items: center; 
   line-height: 100px;
+  justify-content: center;
   background-color: #ee19d2;
   border: 2px outset #ffffff;
   border-radius: 4px;
@@ -179,6 +182,8 @@ h1 {
   font-style: italic;
   opacity: 80%;
 }
+
+
 
 .difficulties {
   grid-column: 2 /3;
@@ -207,47 +212,51 @@ h1 {
   display: flex;
   flex-direction: column;
   text-align: center;
+  
 }
 
-.difficulties button.Easy {
+.Easy {
   background-color: #5cee19;
   border: outset #000000;
   font-size: 35px;
   color: wheat;
   font-family: "Bitcount Grid Double", system-ui;
   font-style: italic;
+  cursor: pointer;
 }
 
-button.Easy:hover,
-button.Easy:active {
+.Easy:hover,
+.Easy:active {
   background-color: #115215;
 }
 
-.difficulties button.Medium {
+.Medium {
   background-color: #1940ee;
   border: outset #000000;
   font-size: 35px;
   color: wheat;
   font-family: "Bitcount Grid Double", system-ui;
   font-style: italic;
+  cursor: pointer;
 }
 
-button.Medium:hover,
-button.Medium:active {
+.Medium:hover,
+.Medium:active {
   background-color: #0e0746;
 }
 
-.difficulties button.Hard {
+ .Hard {
   background-color: #ff0202;
   border: outset #000000;
   font-size: 35px;
   color: wheat;
   font-family: "Bitcount Grid Double", system-ui;
   font-style: italic;
+  cursor: pointer;
 }
 
-button.Hard:hover,
-button.Hard:active {
+.Hard:hover,
+.Hard:active {
   background-color: #680c0c;
 }
 

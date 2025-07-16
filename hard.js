@@ -20,7 +20,7 @@ const img = document.createElement("img");
 let x = 0;
 let y = 0;
 
-let dx =5 , dy = -5;
+let dx =10 , dy = -10;
 
 let intervalId;
 
