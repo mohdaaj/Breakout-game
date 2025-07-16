@@ -31,5 +31,5 @@ Inspired by the classic Atari Breakout game and Mozilla Developer Network (MDN) 
 * **[2D_Breakout_game_pure](https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript)**
 
 ## Game page
- Press this to take you directly to the game page
- * **[Breakout](https://Breakout-score.surge.sh)**
+ Press this to take you directly to the game page:
+ * **[Breakout💫](https://Breakout-score.surge.sh)**
