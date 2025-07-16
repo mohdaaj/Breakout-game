@@ -3,7 +3,6 @@ const paddle = document.getElementById("paddle");
 const ball = document.getElementById("ball");
 const resetBtn = document.getElementById("reset");
 
-// const difficultyButtons = document.querySelectorAll(".difficulties");
 
 const bricks = document.querySelectorAll(".brick, .brickG, .brickB, .brickP, brickGold");
 
@@ -74,51 +73,11 @@ document.addEventListener("keydown", function(event) {
 });
 
 
-// document.addEventListener("mousedown", function(event) {
-//   if (event.button === 0 && !gameRunning && gamereset) {
-//     positionBallAbovePaddle();
-//     intervalId = setInterval(moveBall, 10);
-//     gameRunning = true;
-//     gamereset = false;
-//   }
-// });
-
 resetBtn.addEventListener("click", () => {
   location.reload(); 
   gamereset = true; 
 });
 
-
-
-// difficultyButtons.getElementById("Easy").addEventListener("click", () => {
-//   difficultyButtons
-//   dx = 5;
-//   dy = -5;
-// });
-
-// difficultyButtons.getElementById("Medium").addEventListener("click", () => {
-//   dx = 8;
-//   dy = -8;
-// });
-
-// difficultyButtons.getElementById("Hard").addEventListener("click", () => {
-//   dx = 10;
-//   dy = -10;
-// });
-
-
-
-// startBtn.addEventListener("click", function () {
-  
-//     if (!gameRunning && gamereset) {
-//     positionBallAbovePaddle();
-//     intervalId = setInterval(moveBall, 10);
-//     gameRunning = true;
-//     gamereset = false; 
-//     gameBoundary.style.color = "#1e1e2f";
-
-//   }
-// });
 
 
 
@@ -256,12 +215,10 @@ function showWinMessage() {
   winMessage.style.position = "absolute";
   winMessage.style.top = "50%";
   winMessage.style.left = "50%";
-  winMessage.style.transform = "translate(-50%, -50%)";
   winMessage.style.fontSize = "36px";
   winMessage.style.fontWeight = "bold";
   winMessage.style.color = "#24eb88";
   winMessage.style.textShadow = "2px 2px #000";
-  winMessage.style.zIndex = "1000";
   winMessage.id = "win-message";
   gameBoundary.appendChild(winMessage);
 }
@@ -272,12 +229,10 @@ function showLoseMessage() {
   loseMessage.style.position = "absolute";
   loseMessage.style.top = "50%";
   loseMessage.style.left = "50%";
-  loseMessage.style.transform = "translate(-50%, -50%)";
   loseMessage.style.fontSize = "36px";
   loseMessage.style.fontWeight = "bold";
   loseMessage.style.color = "#24eb88";
   loseMessage.style.textShadow = "2px 2px #000";
-  loseMessage.style.zIndex = "1000";
   loseMessage.style.textAlign = "center"; // center the text
   loseMessage.id = "lose-message";
 
@@ -298,7 +253,5 @@ function showLoseMessage() {
 
 
 /////////////////////////////////////////difficulty/////////////////////////////////////////////////
-
-
 
 

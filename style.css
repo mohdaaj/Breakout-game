@@ -62,6 +62,7 @@ h1 {
   position: absolute;
   bottom: 10px;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 #paddle:hover {
@@ -153,7 +154,7 @@ h1 {
 }
 
 .score {
-  font-size: 45px;
+  font-size: 40px;
   font-weight: bold;
   color: blue;
   font-family: "Bitcount Grid Double", system-ui;

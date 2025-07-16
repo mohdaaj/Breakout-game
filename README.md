@@ -4,9 +4,9 @@
 Breakout is a classic arcade-style game where the player controls a paddle at the bottom of the screen to bounce a ball upward to break bricks at the top. The game continues until all bricks are broken or the player misses the ball.
 
 ## How to Get Started
-1. Clone the repository (once approved)
-2. Open `index.html` in your browser
-3. Try to break all the bricks without letting the ball fall!
+1. Fork and clone the repository.
+2. Open `index.html` in your browser.
+3. Choosing level.
 
 ## How to Play
 - Use mouse to move the paddle left and right.
@@ -14,9 +14,9 @@ Breakout is a classic arcade-style game where the player controls a paddle at th
 - Destroy all bricks to win the game.
 
 ## Technologies Used
-- JavaScript
-- HTML
-- CSS
+- JavaScript.
+- HTML.
+- CSS.
 
 ## Additionals
 - [My Trello](https://trello.com/invite/b/686f1bf3b4ba30e9d1ace2d3/ATTI09bf4b0671472700b7d9f3038ba82ba2A1DC1336/my-trello-board)
