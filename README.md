@@ -29,3 +29,7 @@ Breakout is a classic arcade-style game where the player controls a paddle at th
 ## Credits
 Inspired by the classic Atari Breakout game and Mozilla Developer Network (MDN) tutorial:
 * **[2D_Breakout_game_pure](https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript)**
+
+## Game page
+ Press this to take you directly to the game page
+ * **[Breakout](parsimonious-pizzas.surge.sh)**
