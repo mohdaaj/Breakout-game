@@ -18,7 +18,7 @@ const img = document.createElement("img");
 let x = 0;
 let y = 0;
 
-let dx =12 , dy = -12;
+let dx =10 , dy = -10;
 
 let intervalId;
 
