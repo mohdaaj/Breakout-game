@@ -11,6 +11,7 @@ Breakout is a classic arcade-style game where the player controls a paddle at th
 - Use mouse to move the paddle left and right.
 - Keep the ball from falling off the screen.
 - Destroy all bricks to win the game.
+- Choosing level.
 
 ## Technologies Used
 - JavaScript.
